@@ -76,11 +76,11 @@
     <Content Include="Content\fontawesome-all.min.css" />
     <Content Include="Content\starter-template.css" />
     <Content Include="favicon.ico" />
-    <Content Include="Images\sunsetHills-bg.png" />
     <Content Include="Images\favicon-32x32.png" />
     <Content Include="Fonts\fa-brands-400.svg" />
     <Content Include="Fonts\fa-regular-400.svg" />
     <Content Include="Fonts\fa-solid-900.svg" />
+    <Content Include="Images\SunsetHills-bg.png" />
     <Content Include="index.html" />
     <Content Include="Content\main.css" />
     <Content Include="README.txt" />
