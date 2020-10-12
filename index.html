@@ -113,11 +113,11 @@
 
         document.getElementById("txtInputIn").addEventListener("keydown", function (e) {
 
-            var charater = (e.which) ? e.which : e.keyCode;
-            console.log(charater)
+            var character = (e.which) ? e.which : e.keyCode;
+            console.log(character)
 
-            if (charater >= 97 && charater <= 122 ||
-                charater >= 65 && charater <= 90 || charater == 8) {
+            if (character >= 97 && character <= 122 ||
+                character >= 65 && character <= 90 || character == 8) {
                 return true;
             }
             else {
