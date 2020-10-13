@@ -76,6 +76,7 @@
     <Content Include="Content\fontawesome-all.min.css" />
     <Content Include="Content\starter-template.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Solve.html" />
     <Content Include="Images\favicon-32x32.png" />
     <Content Include="Fonts\fa-brands-400.svg" />
     <Content Include="Fonts\fa-regular-400.svg" />
