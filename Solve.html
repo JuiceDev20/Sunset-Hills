@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!DOCTYPE HTML>
 <html>
 <head>
     <title>Sunset Hills</title>
@@ -7,14 +7,17 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
-    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+ 
     <link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
     <link href="Content/bootstrap-reboot.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/starter-template.css" rel="stylesheet" />
 
-    <link href="Content/starter-template.css" rel="stylesheet" />
-
+    <style>
+        #SeeSunset {
+            color: white;
+        }
+    </style>
 </head>
 <body class="is-preload">
 
@@ -43,7 +46,7 @@
                         <a class="nav-link" href="#">Git</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Portfolio</a>
+                        <a class="nav-link" href="//ojolmo-fs-portfolio.netlify.app">Portfolio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Blog Post</a>
@@ -71,7 +74,7 @@
                 <div class="col"><input id="Input3" class="form-control" placeholder="Bldg Height 3"></div>
                 <div class="col"><input id="Input4" class="form-control" placeholder="Bldg Height 4"></div>
                 <div class="col"><input id="Input5" class="form-control" placeholder="Bldg Height 5"></div>
-                <div class="col"><button class="btn btn-outline-success" id="submit-btn">Submit</button></div>
+                <div class="col"><button class="btn btn-warning" id="submit-btn">Submit</button></div>
             </div>
         </div>
     </section>
@@ -79,67 +82,63 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class=col-6><output class="align-items-center"><span id="SeeSunsetOut"></span></output></div>
+                <div class=col-10><output class="align-items-center"><span id="SeeSunset"></span></output></div>
+                <div class="col-2"><button type="button" onclick="ClearAll()" class="btn btn-dark btn elWide" id="clear">Clear</button></div>
             </div>
         </div>
     </section>
 
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="//code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
     <script>
         document.getElementById("submit-btn").addEventListener("click", function () {
+            DoSunsetHills()
 
+        });
+
+    </script>
+
+    <script>
+        function ClearAll() {
+            document.getElementById("Input1").value = "";
+            document.getElementById("Input2").value = "";
+            document.getElementById("Input3").value = "";
+            document.getElementById("Input4").value = "";
+            document.getElementById("Input5").value = "";
+            document.getElementById("SeeSunset").innerText = "";
+
+        }
+
+        function DoSunsetHills() {
             let height1 = parseInt(document.getElementById("Input1").value);
             let height2 = parseInt(document.getElementById("Input2").value);
             let height3 = parseInt(document.getElementById("Input3").value);
             let height4 = parseInt(document.getElementById("Input4").value);
             let height5 = parseInt(document.getElementById("Input5").value);
-
             let heightArray = [height1, height2, height3, height4, height5];
             let newArray = [];
             let count = 1;
             let currMax = heightArray[0];
             newArray.push(currMax);
 
-            function DoSunsetHills() {
-                for (let i = 1; i < heightArray.length - 1; i++) {
-                    currMax = heightArray[index];
 
-                    if (heightArray[i] > currMax) {
-                        newArray.push(heightArray[i]);
-                        currMax = heightArray[i];
-                    }
-                    document.getElementById("SeeSunsetOut").innerHTML = "currMax" `${count} See Sunset: [${result.toString(', ')}]`;
+            for (let i = 1; i < heightArray.length; i++) {
+
+                if (heightArray[i] > currMax) {
+                    newArray.push(heightArray[i]);
+                    count++;
+                    currMax = heightArray[i];
                 }
-            };
-        });
 
-    </script>
-
-    <script>
-
-        document.getElementById("txtInputIn").addEventListener("keydown", function (e) {
-
-            var character = (e.which) ? e.which : e.keyCode;
-            console.log(character)
-
-            if (character >= 97 && character <= 122 ||
-                character >= 65 && character <= 90 || character == 8) {
-                return true;
-            }
-            else {
-                e.preventDefault();
-                return false;
             }
 
-        });
+            document.getElementById("SeeSunset").innerHTML = `${count} See Sunset: [${newArray}]`;
+        };
 
     </script>
-
-
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 
