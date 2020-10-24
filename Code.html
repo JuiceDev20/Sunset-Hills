@@ -7,12 +7,9 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
- 
-    <link href="Content/bootstrap-grid.min.css" rel="stylesheet" />
-    <link href="Content/bootstrap-reboot.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/starter-template.css" rel="stylesheet" />
-
+    <link href="Content/prism-css.css" rel="stylesheet" />
     <style>
         #SeeSunset {
             color: white;
@@ -29,7 +26,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/Index.html" />
 
                         Home
@@ -38,7 +35,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Solve.html">Solve</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/Code.html">Code</a>
                     </li>
                     <li class="nav-item">
@@ -51,42 +48,15 @@
             </div>
         </div>
     </nav>
-
-
-    <!-- Intro -->
     <section>
         <div class="container">
             <div class="row">
-                <div class="col align-content-center text-info"><h1>Sunset Hills Challenge</</h1></div>
-            </div>
-        </div>
-    </section>
-    <hr />
-    <section>
-        <div class="container">
-            <div class="row">
-                <p class="text-info">In this challenge we evaluate another data array and use a for loop to compare their values to establiash, based on the order in the sequence whether the meet the specified criteria.
-                The demonstration uses the following scenario: If a row of building was align exactly from East to West, then: from which buildings would it be possible to view the sunset?</p>
-            </div>
-        </div>
-    </section>
-    <hr />
-    
-
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="//code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <script>
+                <div class="col-10">
+                    <pre class="line-numbers language-js">
+                        <code class="language-js">
         document.getElementById("submit-btn").addEventListener("click", function () {
             DoSunsetHills()
-
         });
-
-    </script>
-
-    <script>
         function ClearAll() {
             document.getElementById("Input1").value = "";
             document.getElementById("Input2").value = "";
@@ -94,9 +64,7 @@
             document.getElementById("Input4").value = "";
             document.getElementById("Input5").value = "";
             document.getElementById("SeeSunset").innerText = "";
-
         }
-
         function DoSunsetHills() {
             let height1 = parseInt(document.getElementById("Input1").value);
             let height2 = parseInt(document.getElementById("Input2").value);
@@ -109,7 +77,6 @@
             let currMax = heightArray[0];
             newArray.push(currMax);
 
-
             for (let i = 1; i < heightArray.length; i++) {
 
                 if (heightArray[i] > currMax) {
@@ -117,13 +84,17 @@
                     count++;
                     currMax = heightArray[i];
                 }
-
             }
-
             document.getElementById("SeeSunset").innerHTML = `${count} See Sunset: [${newArray}]`;
-        };
-
-    </script>
+        };              </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <script src="//code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="Scripts/prism-js.js"></script>
 
 </body>
 
