@@ -69,20 +69,37 @@
                 <div class="col"><input id="Input3" class="form-control" placeholder="Bldg Height 3"></div>
                 <div class="col"><input id="Input4" class="form-control" placeholder="Bldg Height 4"></div>
                 <div class="col"><input id="Input5" class="form-control" placeholder="Bldg Height 5"></div>
-                <div class="col"><button class="btn btn-info" id="submit-btn">Submit</button></div>
+                                    <!-- Button to Open the Modal and the Landing page.-->
+                <div class="col"><button class="btn btn-info" data-toggle="modal" data-target="#myModal" id="submit-btn">Submit</button></div>
             </div>
         </div>
     </section>
     <hr />
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-10"><output class="align-items-center"><span class="text-info" id="SeeSunset"></span></output></div>
-                <div class="col-2"><button type="button" onclick="ClearAll()" class="btn btn-danger" id="clear">Clear</button></div>
-             </div>
-        </div>
-    </section>
+   
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog-centered">
+            <div class="modal-content">
 
+                <!-- Modal Header -->
+                <div class="modal-header justify-content-center bg-info">
+                    <h4 class="modal-title text-center">Beautiful Sunset!!</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body bg-light justify-content-center">
+                    <output class="align-items-center">
+                        <span class="text-dark" id="SeeSunset"></span>
+                    </output>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer bg-info">
+                    <button type="button" class="btn btn-danger" onclick="ClearAll()" id="clear" data-dismiss="modal">Clear</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="//code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -133,7 +150,7 @@
 
             }
 
-            document.getElementById("SeeSunset").innerHTML = `${count} See Sunset: [${newArray}]`;
+            document.getElementById("SeeSunset").innerHTML = `${count} Buildings can see the Sunset: [${newArray}]`;
         };
 
     </script>

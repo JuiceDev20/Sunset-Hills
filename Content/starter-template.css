@@ -2,7 +2,28 @@ body {
     padding-top: 5rem;
     background-image: url('../Images/SunsetHills-bg.png');
 }
+
 .starter-template {
-  padding: 3rem 1.5rem;
-  text-align: center;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+/* The Modal (background) */
+.modal  {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 30%; /* Full width */
+    height: 100%; /* Full height */
+}
+
+    /* Modal Content/Box */
+.modal-content {
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+
 }
